@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Teste</title>
+  </head>
+  <body>
+    <h1>ABRA O CONSOLE</h1>
+    <script>
+      //Exercício
+
+      var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairro: "Centro",
+        cidade: "São Paulo",
+        uf: "SP"
+      };
+
+      console.log(
+        "O usuário mora em " +
+          endereco.cidade +
+          " / " +
+          endereco.uf +
+          ", no bairro " +
+          endereco.bairro +
+          ", na rua " +
+          endereco.rua +
+          " com número " +
+          endereco.numero
+      );
+
+      //Exercício 02
+
+      function mostrarPares(x, y) {
+        for (i = x; i <= y; i++) {
+          if (i % 2 == 0) {
+            console.log("Número par: " + i);
+          }
+        }
+      }
+
+      mostrarPares(32, 321);
+
+      // Exercício 03
+
+      function temHabilidade(skills) {
+        var habilidade = "PHP";
+        return skills.indexOf(habilidade) == -1 ? false : true;
+      }
+
+      var skills = ["Javascript", "PHP", "WordPress"];
+      console.log(temHabilidade(skills));
+
+      // Exercício 04
+
+      function experiencia(anosEstudo) {
+        if (anosEstudo < 2) {
+          console.log("Iniciante");
+        } else if (anosEstudo < 4) {
+          console.log("Intermediário");
+        } else if (anosEstudo < 7) {
+          console.log("Avançado");
+        } else {
+          console.log("Jedi Master");
+        }
+      }
+
+      var anosEstudo = 9;
+      experiencia(anosEstudo);
+
+      // Exercício 05
+
+      var usuarios = [
+        {
+          nome: "Diego",
+          habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+          nome: "Gabriel",
+          habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+      ];
+
+      function percorrePessoas(usuarios) {
+        for (var usuario of usuarios) {
+          var skills = "";
+          for (var i = 0; i <= usuario.habilidades.length - 1; i++) {
+            if (i < usuario.habilidades.length - 1) {
+              skills += usuario.habilidades[i] + ", ";
+            } else {
+              skills += usuario.habilidades[i] + ".";
+            }
+          }
+
+          console.log(
+            "O " + usuario.nome + " possui as habilidades: " + skills
+          );
+        }
+      }
+
+      percorrePessoas(usuarios);
+    </script>
+  </body>
+</html>
