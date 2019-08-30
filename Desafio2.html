@@ -5,16 +5,37 @@
   </head>
   <body>
     <div id="app">
-      <button id="botao1"></button>
+      <button id="botao1">
+        CLIQUE AQUI E GANHE 1 QUADRADO
+      </button>
     </div>
 
     <script>
-      criaQuadrado.onclick = function() {
-        var quadrado = document.createElement('div');
+      var botao = document.querySelector("div button#botao1");
+      var divGlobal = document.querySelector("div#app");
 
-        quadrado.style.width = 100;
-        quadrado.style.height = 100;
-        quadrado.style.backgroundColor = #f00;
+      botao.onclick = function() {
+        var square = document.createElement("div");
+        square.className = "createdSquare";
+        square.style.width = 100;
+        square.style.height = 100;
+        square.style.backgroundColor = "#F00";
+        square.style.margin = 10;
+
+        divGlobal.appendChild(square);
+
+        square.onmouseover = function() {
+          square.style.backgroundColor = getRandomColor();
+        };
+      };
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
       }
     </script>
   </body>
