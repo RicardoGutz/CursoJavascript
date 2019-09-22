@@ -8,5 +8,24 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
+    <script>
+      var promise = new Promise((resolve, reject) => {
+        const idade = 21;
+
+        if (idade >= 18) {
+          resolve("Maior que 18 anos.");
+        } else {
+          reject("Menor que 18 anos.");
+        }
+      });
+
+      promise
+        .then(resultado => {
+          console.log(resultado);
+        })
+        .catch(erro => {
+          console.log(erro);
+        });
+    </script>
   </body>
 </html>

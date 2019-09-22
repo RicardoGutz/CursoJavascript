@@ -4,13 +4,23 @@
     <title>Módulo 2</title>
   </head>
   <body>
+    <div id="list">
+      <ul></ul>
+      <input type="text" placeholder="Digite Aqui" />
+      <button id="botao2">
+        ADICIONAR ITEM
+      </button>
+    </div>
     <div id="app">
+      <ul></ul>
       <button id="botao1">
         CLIQUE AQUI E GANHE 1 QUADRADO
       </button>
     </div>
 
     <script>
+      //Exercises 1 and 2
+
       var botao = document.querySelector("div button#botao1");
       var divGlobal = document.querySelector("div#app");
 
@@ -37,6 +47,36 @@
         }
         return color;
       }
+
+      // Exercise 3
+
+      var listElement = document.querySelector("div#list ul");
+      var inputElement = document.querySelector("div#list input");
+      var buttonElement = document.querySelector("div#list button");
+
+      var nomes = ["Ricardo", "Felipe", "Duwe"];
+
+      function mostrarLista() {
+        listElement.innerHTML = "";
+        for (i = 0; i <= nomes.length - 1; i++) {
+          var itemList = document.createElement("li");
+          var itemText = document.createTextNode(nomes[i]);
+          itemList.appendChild(itemText);
+          listElement.appendChild(itemList);
+        }
+      }
+
+      function addItem() {
+        nomes.push(inputElement.value);
+        inputElement.value = "";
+        mostrarLista();
+      }
+
+      window.onload = function() {
+        mostrarLista();
+      };
+
+      buttonElement.onclick = addItem;
     </script>
   </body>
 </html>

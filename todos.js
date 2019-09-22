@@ -12,7 +12,6 @@ function renderTodos() {
   for (todo of todos) {
     var todoElement = document.createElement("li");
     var todoText = document.createTextNode(todo);
-
     var linkElement = document.createElement("a");
 
     linkElement.setAttribute("href", "#");
@@ -23,10 +22,8 @@ function renderTodos() {
     var linkText = document.createTextNode("Excluir");
 
     linkElement.appendChild(linkText);
-
     todoElement.appendChild(todoText);
     todoElement.appendChild(linkElement);
-
     listElement.appendChild(todoElement);
   }
 }
